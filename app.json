@@ -1,0 +1,15 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/list/list",
+    "pages/logs/logs"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "中午吃什么",
+    "navigationBarTextStyle": "black"
+  }
+}

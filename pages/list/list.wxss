@@ -1,0 +1,28 @@
+/* pages/list/list.wxss */
+.random{
+  margin: 30rpx 0 40rpx;
+  padding:0 15px;
+  box-sizing: border-box;
+  align-items: center;
+}
+.randomItem{
+  height: 64rpx;
+  line-height: 64rpx;
+  border-radius: 10rpx;
+  border: 1px solid #EBEBEB;
+}
+
+.randomBtn{
+  margin-left: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.icon{
+  float: right;
+  margin-left: 20rpx; 
+}
+
+.list{
+  height:1000rpx;
+}

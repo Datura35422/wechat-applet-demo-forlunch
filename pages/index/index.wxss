@@ -1,0 +1,81 @@
+/**index.wxss**/
+.container{
+  position: relative;
+}
+
+.lunchMap {
+  width: 100%;
+  height: 100%;
+}
+
+.restaurant{
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  height: 50rps;
+  width: 100%;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  align-items: center;
+}
+
+.content{
+  flex: 1;
+  overflow: hidden;
+}
+
+.name{
+  margin-bottom: 10rpx; 
+  font-size: 32rpx;
+}
+
+.distance{
+  margin-bottom: 10rpx; 
+  font-size: 28rpx;
+}
+
+.address{
+  font-size: 28rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.list{
+  flex: 0 0 96rpx;
+  width: 96rpx;
+  height: 96rpx;
+}
+
+/* .search{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -32rpx 0 0 -32rpx;
+  z-index: 1001;
+}
+
+.search .searchIcon{
+  width: 64rpx;
+  height:64rpx;
+} */
+
+.random{
+  position: absolute;
+  top: 50rpx;
+  right: 50rpx;
+  z-index: 1001;
+}
+
+.random .randomIcon,.navigation .navigationIcon{
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.navigation{
+  position: absolute;
+  top: 50rpx;
+  left: 50rpx;
+  z-index: 1001;
+}
