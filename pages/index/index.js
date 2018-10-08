@@ -25,7 +25,10 @@ Page({
     distance: 0,
     cost: 0,
     curMarkerId: 0,
-    page_index: 1
+    page_index: 1,
+    mapType: '1',
+    amap: 'active',
+    qmap: ''
   },
   onReady: function(e) {
     // 使用 wx.createMapContext 获取 map 上下文,map为map的id
@@ -33,20 +36,6 @@ Page({
   },
   onShow() {
     const that = this;
-    // wx.getLocation({
-    //   type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-    //   success(res) {
-    //     app.globalData.myLatitude = res.latitude;
-    //     app.globalData.myLongitude = res.longitude;
-    //     that.setData({
-    //       myLatitude: res.latitude,
-    //       myLongitude: res.longitude,
-    //       curLongitude: res.longitude,
-    //       curLatitude: res.latitude
-    //     });
-    //     that.getRestaurantQQ();
-    //   }
-    // });
     app.getMyLocation(function (res){
       that.setData({
         myLatitude: res.latitude,
@@ -54,7 +43,8 @@ Page({
         curLongitude: res.longitude,
         curLatitude: res.latitude
       });
-      that.getRestaurantQQ();
+      //that.getRestaurantQQ();
+      that.getRestaurantAmap();
     })
     wx.getSystemInfo({ // 设置地图高度，否则地图高度为0
       success: function(res) {
@@ -122,8 +112,6 @@ Page({
               longitude: data[i].location.lng,
               iconPath: "../../image/restaurant5.png", //图标路径
               address: data[i].address,
-              width: 26,
-              height: 31
             })
           }else{
             mks.push({ // 获取返回结果，放到mks数组中
@@ -134,8 +122,7 @@ Page({
               restaurantName: data[i].title,
               restaurantId: data[i].id,
               address: data[i].address,
-              width: 26,
-              height: 31
+            
             })
           }
         }
@@ -175,7 +162,11 @@ Page({
           curLongitude: curLongitude,
           curLatitude: curLatitude
         })
-        that.getRestaurantQQ();
+        if(that.data.mapType == '1'){
+          that.getRestaurantAmap();
+        }else{
+          that.getRestaurantQQ();
+        }
       }
     })
   },
@@ -203,11 +194,15 @@ Page({
       [lastMarker]: '../../image/restaurant4.png',
       [newMarker]: '../../image/restaurant5.png',
       curMarkerId: markerId,
-      restaurantName: this.data.restaurantName,
-      address: this.data.address
+      restaurantName: this.data.markers[markerId].restaurantName,
+      address: this.data.markers[markerId].address
     })
-    // this.distanceAmap();
-    this.distanceQQmap();
+    if(this.data.mapType == '1'){
+      this.distanceAmap();
+      console.log(12);
+    }else{
+      this.distanceQQmap();
+    }
   },
   distanceAmap: function() {
     const that = this;
@@ -297,5 +292,23 @@ Page({
     wx.navigateTo({
       url: '../list/list',
     })
+  },
+  switchMap: function(e){
+    let mapType = e.target.dataset.type;
+    if(mapType == '1'){
+      this.setData({
+        mapType: mapType,
+        amap: 'active',
+        qmap: ''
+      });
+      this.getRestaurantAmap();
+    }else{
+      this.setData({
+        mapType: mapType,
+        amap: '',
+        qmap: 'active'
+      })
+      this.getRestaurantQQ();
+    }
   }
 })

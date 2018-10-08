@@ -1,9 +1,5 @@
 // pages/list/list.js
 const app = getApp();
-var amapFile = require('../../libs/amap-wx.js');
-let amapFun = new amapFile.AMapWX({
-  key: app.globalData.amapkey
-});
 // 引入SDK核心类
 var QQMapWX = require('../../libs/qqmap-wx-jssdk.min');
 // 实例化API核心类
@@ -58,7 +54,7 @@ Page({
             id: data[i].id,
             select: true,
             title: data[i].title,
-            desc: data[i].category
+            desc: data[i].category.split(':')[1]
           }
           newlist.push(item);
         }

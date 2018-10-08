@@ -6,6 +6,10 @@
     bindregionchange="regionchange"
     style="width:100%;height:{{mapHeight}}px">
   </map>
+  <cover-view class="mapContent">
+    <cover-view class="mapName {{amap}}" data-type="1" bindtap='switchMap'>高德地图</cover-view>
+    <cover-view class="mapName {{qmap}}" data-type="2" bindtap='switchMap'>腾讯地图</cover-view>
+  </cover-view>
   <cover-view class="restaurant">
     <cover-view class="content">
       <cover-view class="name">{{restaurantName}}</cover-view>

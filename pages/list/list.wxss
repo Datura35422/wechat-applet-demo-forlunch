@@ -6,6 +6,7 @@
   align-items: center;
 }
 .randomItem{
+  padding: 0 10rpx;
   height: 64rpx;
   line-height: 64rpx;
   border-radius: 10rpx;
@@ -18,9 +19,27 @@
   align-items: center;
 }
 
-.icon{
-  float: right;
-  margin-left: 20rpx; 
+.selectWrapper{
+  margin-right:10rpx;
+}
+
+.titleWrapper{
+  display: flex;
+  justify-content: space-between; 
+}
+
+.title{
+  flex: 1;
+}
+
+.iconWrapper{
+  flex: 0 0 68px;
+}
+
+.iconWrapper .icon{
+  margin-left: 20rpx;
+  height: 24px;
+  width: 24px;
 }
 
 .list{

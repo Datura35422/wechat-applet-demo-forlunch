@@ -43,9 +43,9 @@
 }
 
 .list{
-  flex: 0 0 96rpx;
-  width: 96rpx;
-  height: 96rpx;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
 }
 
 /* .search{
@@ -69,8 +69,8 @@
 }
 
 .random .randomIcon,.navigation .navigationIcon{
-  width: 96rpx;
-  height: 96rpx;
+  width: 32px;
+  height: 32px;
 }
 
 .navigation{
@@ -78,4 +78,24 @@
   top: 50rpx;
   left: 50rpx;
   z-index: 1001;
+}
+
+.mapContent{
+  position: absolute;
+  top: 50rpx;
+  left: 50rpx;
+  z-index: 1001;
+}
+
+.mapName{
+  padding:10rpx 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.active{
+  color: #fff;
+  background: #349c9c;
 }

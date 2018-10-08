@@ -5,19 +5,22 @@
       <button class="weui-btn mini-btn" type="primary" size="mini" bindtap='random'>随便</button>
     </view>
   </view>
-  <view class="weui-cells__title">附近的餐饮
-    <icon class="icon" type="download" size="23" color="#349c9c" bindtap='lower'></icon>
-    <icon class="icon" type="search" size="20" color="#349c9c" bindtap='upper'></icon>
+  <view class="weui-cells__title titleWrapper">
+    <text class="title">附近的餐饮</text>
+    <view class="iconWrapper">
+      <image class="icon" src="../../image/refresh.png" bindtap='upper'></image>
+      <image class="icon" src="../../image/add.png" bindtap='lower'></image>
+    </view>
   </view>
   <scroll-view class="list" scroll-y>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell" wx:for="{{list}}" wx:key="{{item.id}}">
-        <view class="weui-cell__hd">
-          <icon wx:if="{{item.select}}" type="success" size="23"></icon>
-          <icon wx:else type="circle" size="23"></icon>
+        <view class="weui-cell__hd selectWrapper">
+          <icon wx:if="{{item.select}}" type="success" size="23" bindtap="selectSwitch" data-index="{{index}}"></icon>
+          <icon wx:else type="circle" size="23" bindtap="selectSwitch" data-index="{{index}}"></icon>
         </view>
         <view class="weui-cell__bd" bindtap="selectSwitch" data-index="{{index}}">{{item.title}}</view>
-        <view class="weui-cell__ft">{{item.desc}}</view>
+        <view class="weui-cell__ft" bindtap="selectSwitch" data-index="{{index}}">{{item.desc}}</view>
       </view>
     </view>
     <view class="weui-loadmore weui-loadmore_line" wx:if="{{list.length == 0}}">
