@@ -1,12 +1,12 @@
 //index.js
 //获取应用实例
 const app = getApp();
-var amapFile = require('../../libs/amap-wx.js');
-let amapFun = new amapFile.AMapWX({
+const amapFile = require('../../libs/amap-wx.js');
+const amapFun = new amapFile.AMapWX({
   key: app.globalData.amapkey
 });
-var QQMapWX = require('../../libs/qqmap-wx-jssdk.min');
-var qqmapsdk = new QQMapWX({
+const QQMapWX = require('../../libs/qqmap-wx-jssdk.min');
+const qqmapsdk = new QQMapWX({
   key: app.globalData.qqmapkey
 });
 Page({

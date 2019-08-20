@@ -1,9 +1,9 @@
 // pages/list/list.js
 const app = getApp();
 // 引入SDK核心类
-var QQMapWX = require('../../libs/qqmap-wx-jssdk.min');
+const QQMapWX = require('../../libs/qqmap-wx-jssdk.min');
 // 实例化API核心类
-var qqmapsdk = new QQMapWX({
+const qqmapsdk = new QQMapWX({
   key: app.globalData.qqmapkey
 });
 Page({
